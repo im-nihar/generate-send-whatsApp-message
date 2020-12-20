@@ -16,14 +16,14 @@ def random_message():
                        "You are all that I need and will ever need", "Ours is a love so real, so true, so deep...",
                        "I treasure every moment we spent together", "You are special",
                        "You are mine to love and care for", "I appreciate You", "Without You, my world is empty"]
-    a = random.randint(0, 20)
+    a = random.randint(1, len(message_library))
     return message_library[a]
 
 
 def call_whats_app():
     print("Open Whats App Func ")
     message = random_message()
-    phone_no = "+911234567890"
+    phone_no = "+919423646351"
     parsed_message = message
     web.open_new('https://web.whatsapp.com/send?phone=' + phone_no + '&text=' + parsed_message)
     time.sleep(2)
@@ -33,7 +33,7 @@ def call_whats_app():
     pg.press('enter')
     time.sleep(2)
     pg.hotkey('ctrl', 'w')
-    pg.alert('Message sent was: ' + parsed_message + ' to : ' + phone_no, timeout=4000)
+    pg.alert('Message sent was: ' + parsed_message, title=phone_no, timeout=4000)
     time.sleep(2)
     pg.press('OK')
 
@@ -44,8 +44,8 @@ def job():
     print("End Job ")
 
 
-# schedule.every(1).minutes.do(job)
-schedule.every(1).seconds.do(job)
+schedule.every(1).minutes.do(job)
+# schedule.every(1).seconds.do(job)
 # schedule.every().hour.do(job)
 # schedule.every().day.at("10:30").do(job)
 # schedule.every().monday.do(job)
@@ -53,4 +53,4 @@ schedule.every(1).seconds.do(job)
 
 while True:
     schedule.run_pending()
-    time.sleep(40)
+    time.sleep(4)
