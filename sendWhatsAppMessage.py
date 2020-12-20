@@ -23,7 +23,7 @@ def random_message():
 def call_whats_app():
     print("Open Whats App Func ")
     message = random_message()
-    phone_no = "+919423646351"
+    phone_no = "+911234567890"
     parsed_message = message
     web.open_new('https://web.whatsapp.com/send?phone=' + phone_no + '&text=' + parsed_message)
     time.sleep(2)
